@@ -1,13 +1,176 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* How i learned CSS : https://www.w3schools.com/css/default.asp */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+/* When we Select any text, i will change to Blue  */
+::selection{    
+    color: white;  /* Text Color */
+    background-color: blue;  /*Selection Color*/
+}
+/* Body{}  is used to customise */
+/* https://www.w3schools.com/cssref/css_units.asp */
+
+body{
+    background-color: aliceblue;
+    padding: 10px;   /*padding is used to create spacings*/
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    /* CSS gradients let you display smooth transitions between two or more specified colors. */
+    /* background: linear-gradient(#e66465, #9198e5); */
+    background: linear-gradient(#e66465, #9198e5);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper{
+    background-color: white;
+    max-width: 500px;
+    margin: 85px auto;  /* Margin: verticalvalue horizontalvalue;*/
+    /* or instead of top left btom right , write  padding:25px */
+    padding:25px 25px 50px 40px;
+    /* This property allows you to add rounded corners to elements! */
+    /* border-radius: (top-left value) (top-right value) (bottom-leftvalue) (bottom-right value) 
+    and By Default  border-radius: 10px will apply to all corners */
+    border-radius: 10px;  
+}
+/* Customizing ToDo list Text */
+.wrapper header{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight:bold; /*font-weight is used to BOLD the font.*/
+}
+
+.wrapper .inputField{
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  height: 45px;
+}
+.inputField input:hover{
+    background: hsla(53, 94%, 68%, 0.527);
+}
+.inputField button:hover,
+.footer button:hover{
+  background: #721ce3;
+}
+.inputField input{
+    width: 70%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid rgb(150, 139, 139);
+    font-size: 17px;
+    padding-left: 10px;
+    transition: all 0.2s ease;
+}
+
+/* :focus selector is used to select the element that has focus. */
+/* .inputField input:focus{
+    background-color: #9198e5;   
+} */
+
+.inputField button {
+  width: 50px;
+  height: 100%;
+  background: #9198e5;
+  margin-left: 10px;
+  outline: none;
+  border-radius: 3px;
+  color: white;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.78;
+}
+.inputField button:hover{
+    background: #721ce3;
+}
+/* .inputField input:hover{
+    background: hsla(53, 94%, 68%, 0.527);
+} */
+
+
+.footer button{
+    border-radius: 3px;
+    /* margin-left: 10px; */
+    padding:4px;
+}
+.inputField button.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .wrapper .todoList{
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  .todoList li{
+    position: relative;
+    list-style: none;
+    margin-bottom: 8px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 10px 15px;
+    cursor: default;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  .todoList li .icon{
+    position: absolute;
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #e74c3c;
+    width: 45px;
+    text-align: center;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .todoList li:hover .icon{
+    right: 0px;
+  }
+  .wrapper .footer{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer button{
+    padding: 6px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 5px;
+    background: #9198e5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+.copyright p{
+  text-align: center;
+  margin-top: -4rem;
+  text-decoration: none;
+}
+.copyright a{
+  text-align: center;
+  margin-top: -4rem;
+  text-decoration: none;
+  color: black;
+  transition: .4s all ease;
+}
+.copyright a:hover{
+  text-align: center;
+  margin-top: -4rem;
+  text-decoration: none;
+  color: white;
+  transition: .4s all ease;
 }
